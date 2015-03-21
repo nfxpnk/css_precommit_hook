@@ -11,6 +11,18 @@ if(empty($argv)) {
 	exit;
 }
 
+# Verify commit message
+$commitMessageFilePath = trim($argv[3]);
+$commitMessage = file_get_contents($commitMessageFilePath);
+$commitMessage = trim($commitMessage);
+if(empty($commitMessage)) {
+	exitWithError('Commit message can not be empty.');
+}
+
+if(preg_match("#^[A-Z]{3,5}\-\d{1,6}#", $commitMessage) === 0) {
+	exitWithError('Commit message should start with JIRA issue key.');
+}
+
 $filesToCommitFilePath = trim($argv[1]);
 $filesToVerify = file($filesToCommitFilePath);
 
