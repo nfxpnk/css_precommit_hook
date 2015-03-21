@@ -1,4 +1,4 @@
-# css_precommit_hook
+# css_hooks
 > Simple CSS pre-commit hook for Subversion repository
 
 # Tools
