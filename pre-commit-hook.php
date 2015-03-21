@@ -114,8 +114,6 @@ foreach($filesToVerify as $filePath) {
 	$patchFileSize = filesize($patchFilePath);
 
 	if($patchFileSize > 0) {
-		# TODO: Modify patch file
-
 		exitWithError('File ' . $filePath . ' is not perfect.' . "\n" . 'See: ' . $patchFilePath . ' for details.');
 	}
 
