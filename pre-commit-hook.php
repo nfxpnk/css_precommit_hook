@@ -7,7 +7,7 @@ $tempDirectory = 'h:/temp';
 $patchFilePath = $tempDirectory . '/' . 'pre-commit.patch';
 
 if(empty($argv)) {
-	echo 'Wrong execution.';
+	echo 'Something is wrong.';
 	exit;
 }
 
@@ -53,8 +53,7 @@ foreach($filesToVerify as $filePath) {
 
 	# Replace all comments into placeholders !$$!comments_var_!$$!
 	preg_match_all("#\/\*(.*?)\*\/#msi", $tempCssCombFileContent, $matches);
-	foreach($matches[0] as $key => $match)
-	{
+	foreach($matches[0] as $key => $match) {
 		$tempCssCombFileContent = str_replace($match, '!$$!comments_var_' . $key . '!$$!', $tempCssCombFileContent);
 	}
 
@@ -80,8 +79,7 @@ foreach($filesToVerify as $filePath) {
 	$tempCssCombFileContent = str_replace("}", "}\n\n", $tempCssCombFileContent);
 
 	# Put back our css comments instead of out placeholders
-	foreach($matches[0] as $key => $match)
-	{
+	foreach($matches[0] as $key => $match) {
 		$tempCssCombFileContent = str_replace('!$$!comments_var_' . $key . '!$$!', $match, $tempCssCombFileContent);
 	}
 
