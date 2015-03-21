@@ -56,7 +56,7 @@ foreach($filesToVerify as $filePath) {
 	preg_match_all("#\/\*(.*?)\*\/#msi", $tempCssCombFileContent, $matches);
 	foreach($matches[0] as $key => $match)
 	{
-		$tempCssCombFileContent = str_replace($match, '!$$!comments_var_' . $key.'!$$!', $tempCssCombFileContent);
+		$tempCssCombFileContent = str_replace($match, '!$$!comments_var_' . $key . '!$$!', $tempCssCombFileContent);
 	}
 
 	# Delete all spaces and tabs from start of line
@@ -83,7 +83,7 @@ foreach($filesToVerify as $filePath) {
 	# Put back our css comments instead of out placeholders
 	foreach($matches[0] as $key => $match)
 	{
-		$tempCssCombFileContent = str_replace('!$$!comments_var_' . $key.'!$$!', $match, $tempCssCombFileContent);
+		$tempCssCombFileContent = str_replace('!$$!comments_var_' . $key . '!$$!', $match, $tempCssCombFileContent);
 	}
 
 	# Format comments newlines
