@@ -101,6 +101,7 @@ foreach($filesToVerify as $filePath) {
 	# Modify temp original file
 	$tempOriginalFileContent = file_get_contents($tempOriginalFilePath);
 	$tempOriginalFileContent = str_replace("\r\n", "\n", $tempOriginalFileContent);
+	$tempOriginalFileContent = preg_replace("#\n+$#", "\n", $tempOriginalFileContent);
 	file_put_contents($tempOriginalFilePath, $tempOriginalFileContent);
 
 	# Create *.patch file to see is there anything needs to be fixed
