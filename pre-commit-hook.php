@@ -118,6 +118,9 @@ foreach($filesToVerify as $filePath) {
 
 		exitWithError('File ' . $filePath . ' is not perfect.' . "\n" . 'See: ' . $patchFilePath . ' for details.');
 	}
+
+	# Delete patch file if it's empty
+	unlink($patchFilePath);
 }
 
 function exitWithError($errorMessage) {
