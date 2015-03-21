@@ -14,21 +14,19 @@ if(empty($argv)) {
 $filesToCommitFilePath = trim($argv[1]);
 $filesToVerify = file($filesToCommitFilePath);
 
-foreach($filesToVerify as $key => $filePath) {
-	$filePath = trim($filePath);
-	$filesToVerify[$key] = $filePath;
-
-	# Ignore not *.css files
-	if(!preg_match("#\.css$#i", $filePath)) unset($filesToVerify[$key]);
-
-	# Ignore empty lines
-	if(empty($filePath)) unset($filesToVerify[$key]);
-
-	# Ignore deleted files
-	if(!file_exists($filePath)) unset($filesToVerify[$key]);
-}
-
 foreach($filesToVerify as $filePath) {
+	$filePath = trim($filePath);
+
+	if( # Ignore empty lines
+		empty($filePath) ||
+		# Ignore not *.css files
+		!preg_match("#\.css$#i", $filePath) ||
+		# Ignore deleted files
+		!file_exists($filePath)
+	) {
+		continue;
+	}
+
 	# File verification: csslint
 	ob_start();
 	system($cssLintCliPath . ' --errors=known-properties,errors "' . $filePath . '"');
