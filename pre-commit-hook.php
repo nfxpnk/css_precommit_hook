@@ -105,7 +105,7 @@ foreach($filesToVerify as $filePath) {
 	file_put_contents($tempOriginalFilePath, $tempOriginalFileContent);
 
 	# Create *.patch file to see is there anything needs to be fixed
-	system($diffCliPath . ' -Naur "' . $tempOriginalFilePath . '" "' . $tempCssCombFilePath . '" > "' . $patchFilePath . '"');
+	system('"' . $diffCliPath . '" -Naur "' . $tempOriginalFilePath . '" "' . $tempCssCombFilePath . '" > "' . $patchFilePath . '"');
 
 	# Remove temp files
 	unlink($tempOriginalFilePath);
