@@ -17,7 +17,8 @@ $filesToVerify = file($filesToCommitFilePath);
 foreach($filesToVerify as $filePath) {
 	$filePath = trim($filePath);
 
-	if( # Ignore empty lines
+	if(
+		# Ignore empty lines
 		empty($filePath) ||
 		# Ignore not *.css files
 		!preg_match("#\.css$#i", $filePath) ||
