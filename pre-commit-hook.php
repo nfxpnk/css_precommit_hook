@@ -19,7 +19,7 @@ foreach($filesToVerify as $key => $filePath) {
 	$filesToVerify[$key] = $filePath;
 
 	# Ignore not *.css files
-	if(!preg_macth("#\.css$#i", $filePath)) unset($filesToVerify[$key]);
+	if(!preg_match("#\.css$#i", $filePath)) unset($filesToVerify[$key]);
 
 	# Ignore empty lines
 	if(empty($filePath)) unset($filesToVerify[$key]);
@@ -105,6 +105,10 @@ foreach($filesToVerify as $filePath) {
 
 	# Create *.patch file to see is there anything needs to be fixed
 	system($diffCliPath . ' -Naur "' . $tempOriginalFilePath . '" "' . $tempCssCombFilePath . '" > "' . $patchFilePath . '"');
+
+	# Remove temp files
+	unlink($tempOriginalFilePath);
+	unlink($tempCssCombFilePath);
 
 	$patchFileSize = filesize($patchFilePath);
 
