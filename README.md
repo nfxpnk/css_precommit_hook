@@ -1,2 +1,11 @@
 # css_precommit_hook
-Pre-commit hook for svn repository
+> Simple CSS pre-commit hook for Subversion repository
+
+# Tools
+TortoiseSVN
+php5
+csslint
+csscomb
+diff
+
+# Installation
