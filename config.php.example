@@ -1,0 +1,7 @@
+<?php
+$cssLintCliPath = 'csslint';
+$cssCombCliPath = 'csscomb';
+$cssCombConfigFilePath = 'h:/config-csscomb.json';
+$diffCliPath = 'C:/Users/user/AppData/Local/Programs/Git/bin/diff.exe';
+$tempDirectory = 'h:/temp';
+$patchFilePath = $tempDirectory . '/' . 'pre-commit.patch';

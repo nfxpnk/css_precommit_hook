@@ -1,15 +1,11 @@
 <?php
-$cssLintCliPath = 'csslint';
-$cssCombCliPath = 'csscomb';
-$cssCombConfigFilePath = 'h:/config-csscomb.json';
-$diffCliPath = 'C:/Users/user/AppData/Local/Programs/Git/bin/diff.exe';
-$tempDirectory = 'h:/temp';
-$patchFilePath = $tempDirectory . '/' . 'pre-commit.patch';
-
-if(empty($argv)) {
+if(empty($argv[0]) || empty($argv[1]) || empty($argv[2]) || empty($argv[3])) {
 	echo 'Something is wrong.';
 	exit;
 }
+
+# Main configuration
+require __DIR__ . '/config.php';
 
 # Verify commit message
 $commitMessageFilePath = trim($argv[3]);
