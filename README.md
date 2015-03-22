@@ -34,7 +34,7 @@ Check if it work with this line in cmd
 npm -v
 ```
 
-###csslint -- https://github.com/CSSLint/csslint
+####csslint -- https://github.com/CSSLint/csslint
 open cmd and type 
 ``` 
 npm install -g csslint
@@ -44,7 +44,7 @@ Check if it works with this line in cmd
 csslint -v
 ```
 
-###csscomb -- https://github.com/csscomb/csscomb.js
+####csscomb -- https://github.com/csscomb/csscomb.js
 open cmd and type 
 ``` 
 npm install csscomb -g
@@ -54,31 +54,40 @@ Check if it works with this line in cmd
 csscomb -v
 ```
 
-###diffutils -- http://gnuwin32.sourceforge.net/packages/diffutils.htm
+####diffutils -- http://gnuwin32.sourceforge.net/packages/diffutils.htm
 If you have **Git** istalled on your computer you can skip this step
 
 #Configuration
-1. Make SVN Checkout
+####Make SVN Checkout
 ``` 
 https://github.com/nfxpnk/css_hooks
 ```
 Now you have the lastest version of the **pre-commit-hook**
-2. Copy these files to any folder (e.g. c:/apps/hook/)
+
+####Copy these files to any folder (e.g. c:/apps/hook/)
 ``` 
 config.php.example
 pre-commit-hook.php
 config-csscomb.json
 ```
-3. Rename config.php.example to config.php and open it
-4. Make chnages accordingly
+####Rename config.php.example to config.php and make a changes accordingly
 ``` php
 <?php
 $cssLintCliPath = 'csslint'; #no need to change this
 $cssCombCliPath = 'csscomb'; #no need to change this
-$cssCombConfigFilePath = 'c:/apps/hook/config-csscomb.json'; #this is config for css comb
-$diffCliPath = 'C:/Users/user/AppData/Local/Programs/Git/bin/diff.exe'; #diff.exe
-$tempDirectory = 'c:/apps/hook/temp'; #firectory for *.patch files
-$patchFilePath = $tempDirectory . '/' . 'pre-commit.patch';
+$cssCombConfigFilePath = 'c:/apps/hook/config-csscomb.json'; #this is config for csscomb
+$diffCliPath = 'C:/Users/user/AppData/Local/Programs/Git/bin/diff.exe'; #path to diff.exe
+$tempDirectory = 'c:/apps/hook/temp'; #path to *.patch file
+$patchFilePath = $tempDirectory . '/' . 'pre-commit.patch'; #name of the generated patch file
 ```
+
+####Open TortoiseSVN settings and setup [Client Side Hook Script](http://tortoisesvn.net/docs/release/TortoiseSVN_en/tsvn-dug-settings.html#tsvn-dug-settings-hooks)
+**Hook type:** pre-commit-hook
+**Working copy path:** c:/svn-repository
+**Command line to execute:** c:/apps/php/php.exe c:/apps/hook/pre-commit-hook.php
+Mark checkbox **Wait for script to finish**
+Unmark checkbox **Hide the script while running**
+
+
 
 
