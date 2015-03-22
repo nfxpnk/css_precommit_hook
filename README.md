@@ -1,9 +1,15 @@
 # css_hooks
-> Simple CSS pre-commit hook for Subversion repository
+> CSS pre-commit hook for TortoiseSVN
+
+<ol>
+<li>
+TortoiseSVN
+http://tortoisesvn.net/downloads.html
+</li>
+</ol>
 
 # Tools
-* TortoiseSVN 
-> http://tortoisesvn.net/downloads.html
+
 * PHP5 
 > http://windows.php.net/download
 * node.js 
