@@ -70,7 +70,7 @@ config.php.example
 pre-commit-hook.php
 config-csscomb.json
 ```
-####Rename config.php.example to config.php and make a changes accordingly
+####Rename config.php.example to config.php and make changes accordingly
 ``` php
 <?php
 $cssLintCliPath = 'csslint'; #no need to change this
@@ -83,10 +83,27 @@ $patchFilePath = $tempDirectory . '/' . 'pre-commit.patch'; #name of the generat
 
 ####Open TortoiseSVN settings and setup [Client Side Hook Script](http://tortoisesvn.net/docs/release/TortoiseSVN_en/tsvn-dug-settings.html#tsvn-dug-settings-hooks)
 **Hook type:** pre-commit-hook
-**Working copy path:** c:/svn-repository
-**Command line to execute:** c:/apps/php/php.exe c:/apps/hook/pre-commit-hook.php
-Mark checkbox **Wait for script to finish**
-Unmark checkbox **Hide the script while running**
+
+Working copy path:
+```
+c:/svn-repository
+```
+
+Command line to execute:
+```
+c:/apps/php/php.exe c:/apps/hook/pre-commit-hook.php
+```
+
+Mark checkbox
+```
+Wait for script to finish
+```
+
+Unmark checkbox
+```
+Hide the script while running
+```
+
 
 
 
