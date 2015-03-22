@@ -4,6 +4,10 @@ if(empty($argv[0]) || empty($argv[1]) || empty($argv[2]) || empty($argv[3])) {
 	exit;
 }
 
+if(!file_exists(__DIR__ . '/config.php')) {
+	exitWithError('Please, copy and rename ' . __DIR__ . '/config.php.example to config.php.');
+}
+
 # Main configuration
 require __DIR__ . '/config.php';
 
