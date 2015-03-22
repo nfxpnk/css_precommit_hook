@@ -3,27 +3,27 @@
 >CSS pre-commit hook for TortoiseSVN
 
 #Getting started
-<ol>
-	<li>TortoiseSVN<br />http://tortoisesvn.net/downloads.html</li>
-	<li>
-		<p>
-			PHP5<br />http://windows.php.net/download
-		</p>
-		<p>
-			Instal the latest release for <b>windows php-5.6.7-Win32-VC11-x86.zip</b><br />
-			Extract it to any writable folder, for an example
-			```c:/apps/php```
-		</p>
-		<p>
-			Check if it works as expected with command
-			```c:/apps/php/php.exe -v```
-		</p>
-	</li>
-	<li>node.js<br />https://nodejs.org/download/</li>
-	<li>csslint<br />https://github.com/CSSLint/csslint</li>
-	<li>csscomb<br />https://github.com/csscomb/csscomb.js</li>
-	<li>diffutils<br />http://gnuwin32.sourceforge.net/packages/diffutils.htm</li>
-</ol>
+
+* TortoiseSVN -- http://tortoisesvn.net/downloads.html</li>
+* PHP5 -- http://windows.php.net/download
+
+Instal the latest release for windows 'php-5.6.7-Win32-VC11-x86.zip'
+
+Extract it to any writable folder, for an example
+``` php
+c:/apps/php
+```
+
+Check if it works as expected with command
+``` php
+c:/apps/php/php.exe -v
+```
+
+* node.js -- https://nodejs.org/download/
+* csslint -- https://github.com/CSSLint/csslint
+* csscomb -- https://github.com/csscomb/csscomb.js
+* diffutils -- http://gnuwin32.sourceforge.net/packages/diffutils.htm
+
 
 
 
