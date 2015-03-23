@@ -155,15 +155,16 @@ See: c:/apps/hook/temp/pre-commit.patch for details.
 +}
 ```
 You can fix the formatting by yourself or just apply the pre-commit.patch to main.css
-To apply patch to css file follow these steps:
-1. Copy pre-commit.patch to c:/svn-repository/css/
-2. Open Git Bash ant type following
+
+####To apply patch to css file follow these steps:
+#####Copy pre-commit.patch to c:/svn-repository/css/
+#####Open Git Bash ant type following
 
 ``` 
 cd /c/svn-repository/css/
 patch main.css pre-commit.patch
 patching file main.css
 ```
-3. Delete patch file from c:/svn-repository/css/
-4. Perform a commit.
+#####Delete patch file from c:/svn-repository/css/
+#####Perform a commit.
 
