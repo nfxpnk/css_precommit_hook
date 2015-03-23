@@ -162,6 +162,7 @@ See: c:/apps/hook/temp/pre-commit.patch for details.
 You can fix the formatting by yourself or just apply the pre-commit.patch to main.css
 
 ###To apply patch to css file follow these steps:
+
 -Copy pre-commit.patch to c:/svn-repository/css/
 
 -Open Git Bash ant type following
@@ -169,7 +170,6 @@ You can fix the formatting by yourself or just apply the pre-commit.patch to mai
 ``` php
 cd /c/svn-repository/css/
 patch main.css pre-commit.patch
-patching file main.css
 ```
 
 -Delete patch file from c:/svn-repository/css/
