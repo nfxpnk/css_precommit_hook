@@ -22,10 +22,15 @@ c:/apps/php/php.exe -v
 ###node.js -- https://nodejs.org/download/
 Download and install. After installation be sure you have **npm** in the windows command path.
 To check it please follow these steps:
-1. From the desktop, right-click My Computer and click Properties.
-2. In the System Properties window, click on the Advanced tab.
-3. In the Advanced section, click the Environment Variables button.
-4. Finally, in the Environment Variables window, highlight the Path variable in the Systems Variable section and click the Edit button. Add or modify the path lines with the paths you wish the computer to access. Each different directory is separated with a semicolon as shown below.
+
+- From the desktop, right-click My Computer and click Properties.
+
+- In the System Properties window, click on the Advanced tab.
+
+- In the Advanced section, click the Environment Variables button.
+
+- Finally, in the Environment Variables window, highlight the Path variable in the Systems Variable section and click the Edit button. Add or modify the path lines with the paths you wish the computer to access. Each different directory is separated with a semicolon as shown below.
+
 ``` 
 C:\Users\user\AppData\Roaming\npm;C:\Program Files\nodejs
 ```
@@ -157,19 +162,18 @@ See: c:/apps/hook/temp/pre-commit.patch for details.
 You can fix the formatting by yourself or just apply the pre-commit.patch to main.css
 
 ###To apply patch to css file follow these steps:
-1. Copy pre-commit.patch to c:/svn-repository/css/
+-Copy pre-commit.patch to c:/svn-repository/css/
 
-2. Open Git Bash ant type following
+-Open Git Bash ant type following
 
-``` 
+``` php
 cd /c/svn-repository/css/
 patch main.css pre-commit.patch
 patching file main.css
 ```
 
+-Delete patch file from c:/svn-repository/css/
 
-3. Delete patch file from c:/svn-repository/css/
-
-4. Perform a commit.
+-Perform a commit.
 
 
