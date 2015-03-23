@@ -7,7 +7,7 @@
 ###TortoiseSVN -- http://tortoisesvn.net/downloads.html</li>
 ###PHP5 -- http://windows.php.net/download
 
-Instal the latest release for windows **php-5.6.7-Win32-VC11-x86.zip**
+Install the latest release for windows **php-5.6.7-Win32-VC11-x86.zip**
 
 Extract it to any writable folder, for an example
 ``` 
@@ -55,7 +55,7 @@ csscomb -v
 ```
 
 ####diffutils -- http://gnuwin32.sourceforge.net/packages/diffutils.htm
-If you have **Git** istalled on your computer you can skip this step
+If you have Git istalled on your computer you can skip this step
 
 #Configuration
 ####Make SVN Checkout
@@ -82,7 +82,10 @@ $patchFilePath = $tempDirectory . '/' . 'pre-commit.patch'; #name of the generat
 ```
 
 ####Open TortoiseSVN settings and setup [Client Side Hook Script](http://tortoisesvn.net/docs/release/TortoiseSVN_en/tsvn-dug-settings.html#tsvn-dug-settings-hooks)
-**Hook type:** pre-commit-hook
+Hook type:
+```
+pre-commit-hook
+```
 
 Working copy path:
 ```
@@ -104,7 +107,37 @@ Unmark checkbox
 Hide the script while running
 ```
 
+#Usage
+*This pre-commit hook process css files only.
+* The message textareat in the commit dialogue window can't be empty also message should began with JIRA ticket name, otherwise the hook will not let you to perform a commit.
+*Try to commit a css file with obvious syntax errors. 
+``` css
+.test {
+	col1or: #c33;
+}
+```
+In that case script will not let you to perform a commit and show a message which line of css file has an error.
+```
+The hook script returned an error:
+csslint: There are 1 problems in c:/svn-repository/css/main.css.
 
+main.css
+1: error at line 1174, col 2
+Unknown property 'col1or'.
+	col1or: #c33;
+```
 
+*Try to commit a css file with formatting which doesn't correspond to styleguide (defined within **config-csscomb.json**). 
+
+``` css
+.test {color: #c33;}
+```
+In that case script will not let you to perform a commit and show a message:
+```
+The hook script returned an error:
+File c:/svn-repository/css/main.css is not perfect.
+See: c:/apps/hook/temp/pre-commit.patch for details.
+```
+You can fix the formatting by yourself or just apply the pre-commit.patch to main.css
 
 
