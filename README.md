@@ -54,8 +54,8 @@ Check if it works with this line in cmd
 csscomb -v
 ```
 
-####diffutils -- http://gnuwin32.sourceforge.net/packages/diffutils.htm
-If you have Git istalled on your computer you can skip this step
+####git -- http://git-scm.com/download/win
+
 
 #Configuration
 ####Make SVN Checkout
@@ -108,15 +108,19 @@ Hide the script while running
 ```
 
 #Usage
-*This pre-commit hook process css files only.
-* The message textareat in the commit dialogue window can't be empty also message should began with JIRA ticket name, otherwise the hook will not let you to perform a commit.
-*Try to commit a css file with obvious syntax errors. 
+This pre-commit hook process css files only.
+
+The message textarea in the commit dialogue window can't be empty also message should began with JIRA ticket name, otherwise the hook will not let you to perform a commit.
+
+Try to commit a css file with obvious syntax errors. 
+
 ``` css
 .test {
 	col1or: #c33;
 }
 ```
 In that case script will not let you to perform a commit and show a message which line of css file has an error.
+
 ```
 The hook script returned an error:
 csslint: There are 1 problems in c:/svn-repository/css/main.css.
@@ -127,17 +131,39 @@ Unknown property 'col1or'.
 	col1or: #c33;
 ```
 
-*Try to commit a css file with formatting which doesn't correspond to styleguide (defined within **config-csscomb.json**). 
+Try to commit a css file with formatting which doesn't correspond to styleguide (defined within **config-csscomb.json**).
+
 
 ``` css
 .test {color: #c33;}
 ```
 In that case script will not let you to perform a commit and show a message:
+
 ```
 The hook script returned an error:
 File c:/svn-repository/css/main.css is not perfect.
 See: c:/apps/hook/temp/pre-commit.patch for details.
 ```
-You can fix the formatting by yourself or just apply the pre-commit.patch to main.css
 
+**pre-commit.patch** contents
+
+``` diff
+-.nfx {color: #c33;}
+\ No newline at end of file
++.nfx {
++	color: #c33;
++}
+```
+You can fix the formatting by yourself or just apply the pre-commit.patch to main.css
+To apply patch to css file follow these steps:
+1. Copy pre-commit.patch to c:/svn-repository/css/
+2. Open Git Bash ant type following
+
+``` 
+cd /c/svn-repository/css/
+patch main.css pre-commit.patch
+patching file main.css
+```
+3. Delete patch file from c:/svn-repository/css/
+4. Perform a commit.
 
