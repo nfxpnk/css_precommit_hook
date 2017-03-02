@@ -1,5 +1,5 @@
 
-# css_hooks
+# svn-css-pre-commit-hook
 >CSS pre-commit hook for TortoiseSVN
 
 #Getting started
